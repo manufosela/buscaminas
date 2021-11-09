@@ -193,6 +193,7 @@ function gameOver(x, y) {
 
 function youWin() {
   console.warn('You Win!');
+  confetti();
   const disableBoardClick = new CustomEvent(
     'board-cell-disable-board-click',
     {
@@ -273,18 +274,18 @@ function cellClick(ev) {
 }
 
 function createBoard(parentNode) {
-  const boardCell = document.createElement('board-cell');
-  boardCell.setAttribute('id', idGame);
-  boardCell.setAttribute('cols', boardSize);
-  boardCell.setAttribute('rows', boardSize);
-  boardCell.setAttribute('cell-size', cellSize);
-  boardCell.setAttribute('cell-text-color', '#ffffff');
-  boardCell.setAttribute('grid-color', '#ffff00');
-  // boardCell.setAttribute("hover-cell", "true");
-  boardCell.setAttribute('title', idGame);
-  boardCell.setAttribute('onclick', 'cellClick');
-  parentNode.appendChild(boardCell);
-  return boardCell;
+  const boardCellElement = document.createElement('board-cell');
+  boardCellElement.setAttribute('id', idGame);
+  boardCellElement.setAttribute('cols', boardSize);
+  boardCellElement.setAttribute('rows', boardSize);
+  boardCellElement.setAttribute('cell-size', cellSize);
+  boardCellElement.setAttribute('cell-text-color', '#ffffff');
+  boardCellElement.setAttribute('grid-color', '#ffff00');
+  // boardCellElement.setAttribute("hover-cell", "true");
+  boardCellElement.setAttribute('title', idGame);
+  boardCellElement.setAttribute('onclick', 'cellClick');
+  parentNode.appendChild(boardCellElement);
+  return boardCellElement;
 }
 
 function init() {
